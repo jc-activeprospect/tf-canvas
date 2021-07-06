@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+  <h1>TrustedForm with a Canvas</h1>
+  <form action="https://next.leadconduit.com/flows/5f441019fb577095e08dad84/sources/56ddf55401a7c994452e8ca5/submit" method="post">
+    <fieldset>
+    <div class="nameField">
+      First name:
+    </div>
+    <div class="inputField">
+      <input type="text" name="first_name" class="txt" onClick="myFunction()"/> <br />
+    </div>
+    <br>
+    <div class="nameField">
+      Last name:
+    </div>
+    <div class="inputField">
+      <input type="text" name="last_name" class="txt" /> <br />
+    </div>
+    <br>
+    <div class="nameField">
+      Phone:
+    </div>
+    <div class="inputField">
+      <input type="text" name="phone_1" class="txt" /> <br />
+    </div>
+    <br>
+    <div class="nameField">
+      Email:
+    </div>
+    <div class="inputField">
+      <input type="text" name="email" class="txt" /> <br />
+    </div>
+    <br>
+    <div class="nameField">
+      Zip Code:
+    </div>
+    <div class="inputField">
+      <input type="text" name="postal_code" class="txt" /> <br />
+    </div>
+    <br>
+
+    <div>
+      <input type="checkbox" name="disclaimer" /> By clicking this button, I hereby consent to receive notifications by phone call, sms, email for all kinds of home services.
+    </div>
+
+    <!-- <input type="submit" value="Submit" id="mySubmit" /> -->
+
+    <!-- Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>E-Signature</h1>
+          <p>Sign in the canvas below and save your signature as an image!</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <canvas id="sig-canvas" width="620" height="160">
+            Something must not be working, have no fear, the data url should still display in the section below!
+          </canvas>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button>
+          <button class="btn btn-default" id="sig-clearBtn">Clear Signature</button>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-md-12">
+          <textarea id="sig-dataUrl" class="form-control" rows="5">Data URL for your signature will go here!</textarea>
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-md-12">
+          <img id="sig-image" src="" alt=""/>
+        </div>
+      </div>
+    </div>
+
+    </fieldset>
+  </form>
+
+  <div id="TF_URL"></div>
+
+  <script type="text/javascript">
+    function myFunction() {
+      document.getElementById("TF_URL").innerHTML = "<b>TF URL:</b> " + document.getElementById("xxTrustedFormToken_0").value;
+    }
+  </script>
+
+  <script src="main.js">
+  </script>
+
+  <script type="text/javascript">
+    (function() {
+        var field = 'xxTrustedFormCertUrl';
+        var provideReferrer = false;
+        var invertFieldSensitivity = false;
+        var sandbox = false;
+        var tf = document.createElement('script');
+        tf.type = 'text/javascript'; tf.async = true;
+        tf.src = 'http' + ('https:' == document.location.protocol ? 's' : '') +
+          '://api.trustedform.com/trustedform.js?provide_referrer=' + escape(provideReferrer) + '&field=' + escape(field) + '&l='+new Date().getTime()+Math.random() + '&invert_field_sensitivity=' + invertFieldSensitivity;
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s); }
+    )();
+  </script>
+  <noscript>
+      <img src="http://api.trustedform.com/ns.gif" />
+  </noscript>
+
+  </body>
+</html>

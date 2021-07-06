@@ -1,0 +1,22 @@
+html, body {
+  font-family: Tahoma !important;
+}
+
+.nameField{
+    display:inline-block;
+    width: 120px;
+    text-align: left;
+    /* padding: 14px 10px 0 0;
+    margin:0 0 7px 0; */
+}
+.inputField{
+    display:inline-block;
+    width:130px;
+    margin:0 0 7px 0;
+}​
+
+#sig-canvas {
+  border: 2px dotted #CCCCCC;
+  border-radius: 15px;
+  cursor: crosshair;
+}
